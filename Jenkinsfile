@@ -7,6 +7,13 @@ pipeline {
       }
     }
 
+    stage('run it') {
+      steps {
+        sh '''chmod +x test.sh;
+ ./test.sh'''
+      }
+    }
+
   }
   triggers {
     cron('H/15 * * * *')
